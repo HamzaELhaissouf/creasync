@@ -45,7 +45,7 @@ class CreawebSync
         add_action('added_post_meta', array($this, 'cbs_add_product'), 10, 4);
 
         //after the update product hook
-        add_action('updated_post_meta', array($this, 'cbs_update_product'), 10, 4);
+//        add_action('updated_post_meta', array($this, 'cbs_update_product'), 10, 4);
 
     }
 
