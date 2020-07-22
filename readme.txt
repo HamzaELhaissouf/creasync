@@ -1,14 +1,8 @@
-#creaweb-sync
-creawebsync is wordpress plugin for synchronizing between dolibarr and woocommerce :3
+# CreawebSync
 
-Foobar is a Python library for dealing with word pluralization.
+ creawebSync open source plugin for synchronizing between dolibarr and woocommerce
+## Getting Started
 
-##Installation
-
-clone or download the creawebsync plugin and insert it int wp-content/plugins folder
-
-
-
-##Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+ download the zip file and extarct it inside the wp-content/plugins
+ active the plugin
 
