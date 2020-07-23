@@ -1,22 +1,8 @@
 <?php
 
 
-/* Copyright (C) 2020-2021 Hamza Elhaissouf <>
+// Copyright (C) 2020-2021 Hamza Elhaissouf <>
 
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 
 /**
  * CreawebSync plugin.
@@ -43,8 +29,7 @@ function callAPI($method, $api_key, $api_url, $data = false)
      */
     $httpheader = ['DOLAPIKEY: ' . $api_key];
 
-    switch ($method)
-    {
+    switch ($method) {
         case "POST":
             curl_setopt($curl, CURLOPT_POST, 1);
             $httpheader[] = "Content-Type:application/json";
@@ -60,6 +45,10 @@ function callAPI($method, $api_key, $api_url, $data = false)
 
             if ($data)
                 curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+
+            break;
+        case "GET":
+            curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'GET');
 
             break;
         default:
