@@ -15,6 +15,7 @@
 
 /**
  * calling the dolibarr apis
+ * using the curl library this method interact with the dolibarr apis for the crud operations
  * @param string $method //request method type
  * @param string $api_key //dolibarr api key
  * @param string $api_url //dolibarr api url
@@ -70,4 +71,41 @@ function callAPI($method, $api_key, $api_url, $data = false)
 
     return $result;
 }
+/**
+ * get the product id by its ref
+ *  this method just check if a product already exit if so it returns its id if not it returns 0
+ * @param string $ref //product_ref to get
+ * @param string $api_key //dolibarr api key
+ * @param string $api_url //dolibarr api url
+ * @return int // product id
+ */
+function product_id_by_ref($ref , $api_key, $api_url){
 
+    $product = $targetedProduct = callAPI("GET"
+        , $api_key,
+        $api_url . "products/ref/" . $ref);
+
+    $product = json_decode($product);
+
+    return $product->id ?? 0;
+}
+
+/**
+ * get the thirdparty id by his email
+ * this method just check if a customer already exit if so it returns his id if not it returns 0
+ * @param string $email //product_ref to get
+ * @param string $api_key //dolibarr api key
+ * @param string $api_url //dolibarr api url
+ * @return int // thirdparty id
+ */
+function thirdParty_id_by_email($email , $api_key, $api_url){
+
+    $thirdParty = $targetedProduct = callAPI("GET"
+        , $api_key,
+        $api_url . "thirdparties/byEmail/" . $email);
+
+    $thirdParty = json_decode($thirdParty);
+
+    return $thirdParty->id  ?? 0;
+
+}
