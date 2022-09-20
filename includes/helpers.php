@@ -91,8 +91,8 @@ function product_id_by_ref($ref , $api_key, $api_url){
 }
 
 /**
- * get the thirdparty id by his email
- * this method just check if a customer already exit if so it returns his id if not it returns 0
+ * get the thirdparty id by  email
+ * this method check if a customer already exit & returns id || 0
  * @param string $email //product_ref to get
  * @param string $api_key //dolibarr api key
  * @param string $api_url //dolibarr api url
